@@ -1,5 +1,7 @@
 @import "tailwindcss";
-@plugin "daisyui";
+@plugin "daisyui" {
+  themes: false;
+};
 
 /* Minecraft-style pixel font */
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
