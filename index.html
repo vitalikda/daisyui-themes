@@ -256,9 +256,9 @@
                 </div>
                 <form method="dialog" class="modal-backdrop"><button>close</button></form>
               </dialog>
-              <div class="relative mt-3">
-                <button class="btn btn-secondary" popovertarget="demo-dropdown" style="anchor-name: --dropdown-anchor;">Dropdown</button>
-                <ul id="demo-dropdown" popover class="menu bg-base-100 w-52 p-2 shadow border-2 border-base-content" style="position-anchor: --dropdown-anchor; position: absolute; top: anchor(bottom); left: anchor(left); margin-top: 0.25rem;">
+              <div class="dropdown mt-3">
+                <div tabindex="0" role="button" class="btn btn-secondary">Dropdown</div>
+                <ul tabindex="-1" class="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm border-2 border-base-content">
                   <li><a>Item 1</a></li>
                   <li><a>Item 2</a></li>
                 </ul>
