@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="comics">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DaisyUI Theme Preview</title>
+  <link id="theme-css" href="./dist/comics.css" rel="stylesheet">
+</head>
+<body class="bg-base-200 min-h-screen">
+  <div class="navbar bg-base-100 border-b-2 border-base-content sticky top-0 z-50">
+    <div class="flex-1">
+      <span class="text-xl font-bold px-4">DaisyUI Themes</span>
+    </div>
+    <div class="flex-none gap-2 px-4">
+      <label class="text-sm font-medium">Theme:</label>
+      <select id="theme-select" class="select select-sm select-primary w-40">
+        <option value="comics">Loading...</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto p-4 md:p-8">
+    <!-- Main Tabs -->
+    <div role="tablist" class="tabs tabs-box tabs-lg mb-8">
+      <input type="radio" name="main_tabs" class="tab" aria-label="Components Demo" checked />
+      <div class="tab-content p-6 bg-base-100 border-2 border-base-content border-t-0">
+        
+        <!-- Components Demo Content -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+          <!-- Buttons Card -->
+          <div class="card bg-base-100 card-border">
+            <div class="card-body">
+              <h3 class="card-title text-sm font-bold uppercase tracking-wide text-base-content/60">Buttons</h3>
+              <div class="flex flex-wrap gap-3">
+                <button class="btn btn-primary">Primary</button>
+                <button class="btn btn-secondary">Secondary</button>
+                <button class="btn btn-accent">Accent</button>
+                <button class="btn btn-neutral">Neutral</button>
+              </div>
+              <div class="flex flex-wrap gap-3 mt-4">
+                <button class="btn btn-info">Info</button>
+                <button class="btn btn-success">Success</button>
+                <button class="btn btn-warning">Warning</button>
+                <button class="btn btn-error">Error</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Badge Card -->
+          <div class="card bg-base-100 card-border">
+            <div class="card-body">
+              <h3 class="card-title text-sm font-bold uppercase tracking-wide text-base-content/60">Badges</h3>
+              <div class="flex flex-wrap gap-3">
+                <span class="badge badge-primary">Primary</span>
+                <span class="badge badge-secondary">Secondary</span>
+                <span class="badge badge-accent">Accent</span>
+                <span class="badge badge-neutral">Neutral</span>
+              </div>
+              <div class="flex flex-wrap gap-3 mt-4">
+                <span class="badge badge-info">Info</span>
+                <span class="badge badge-success">Success</span>
+                <span class="badge badge-warning">Warning</span>
+                <span class="badge badge-error">Error</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tabs Card -->
+          <div class="card bg-base-100 card-border">
+            <div class="card-body">
+              <h3 class="card-title text-sm font-bold uppercase tracking-wide text-base-content/60">Tabs</h3>
+              <div role="tablist" class="tabs tabs-box">
+                <input type="radio" name="demo_tabs" class="tab" aria-label="Shoes" checked />
+                <input type="radio" name="demo_tabs" class="tab" aria-label="Bags" />
+                <input type="radio" name="demo_tabs" class="tab" aria-label="Hats" />
+              </div>
+              <div role="tablist" class="tabs tabs-border mt-3">
+                <input type="radio" name="demo_tabs2" class="tab" aria-label="Tab 1" checked />
+                <input type="radio" name="demo_tabs2" class="tab" aria-label="Tab 2" />
+                <input type="radio" name="demo_tabs2" class="tab" aria-label="Tab 3" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Form Inputs Card -->
+          <div class="card bg-base-100 card-border">
+            <div class="card-body">
+              <h3 class="card-title text-sm font-bold uppercase tracking-wide text-base-content/60">Form Inputs</h3>
+              <label class="floating-label">
+                <input type="text" placeholder="Email" class="input input-primary w-full" />
+                <span>Email</span>
+              </label>
+              <label class="floating-label mt-3">
+                <input type="password" placeholder="Password" class="input w-full" />
+                <span>Password</span>
+              </label>
+              <select class="select select-primary w-full mt-3">
+                <option disabled selected>Select option</option>
+                <option>Option 1</option>
+                <option>Option 2</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Checkboxes & Toggles Card -->
+          <div class="card bg-base-100 card-border">
+            <div class="card-body">
+              <h3 class="card-title text-sm font-bold uppercase tracking-wide text-base-content/60">Selectors</h3>
+              <div class="flex items-center gap-4">
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" class="checkbox checkbox-primary" checked />
+                  <span>Checkbox</span>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" class="checkbox checkbox-secondary" />
+                  <span>Secondary</span>
+                </label>
+              </div>
+              <div class="flex items-center gap-4 mt-3">
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="radio" name="demo_radio" class="radio radio-primary" checked />
+                  <span>Radio 1</span>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="radio" name="demo_radio" class="radio radio-primary" />
+                  <span>Radio 2</span>
+                </label>
+              </div>
+              <div class="flex items-center gap-4 mt-3">
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" class="toggle toggle-primary" checked />
+                  <span>Toggle</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Range & Progress Card -->
+          <div class="card bg-base-100 card-border">
+            <div class="card-body">
+              <h3 class="card-title text-sm font-bold uppercase tracking-wide text-base-content/60">Range & Progress</h3>
+              <input type="range" min="0" max="100" value="50" class="range range-primary" />
+              <progress class="progress progress-primary mt-3" value="70" max="100"></progress>
+              <progress class="progress progress-secondary mt-2" value="40" max="100"></progress>
+            </div>
+          </div>
+
+          <!-- Product Card -->
+          <div class="card bg-base-100 card-border">
+            <figure class="px-4 pt-4">
+              <div class="bg-base-300 w-full h-32 flex items-center justify-center">
+                <span class="text-4xl">👟</span>
+              </div>
+            </figure>
+            <div class="card-body">
+              <div class="badge badge-secondary">SALE</div>
+              <h2 class="card-title">Nike Shoes</h2>
+              <p class="text-sm text-base-content/70">420 reviews</p>
+              <div class="flex items-center gap-2">
+                <span class="text-xl font-bold">$120</span>
+                <span class="text-sm line-through text-base-content/50">$150</span>
+              </div>
+              <div class="card-actions justify-end mt-2">
+                <button class="btn btn-primary btn-sm">Buy Now</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stats Card -->
+          <div class="card bg-base-100 card-border">
+            <div class="card-body">
+              <h3 class="card-title text-sm font-bold uppercase tracking-wide text-base-content/60">Stats</h3>
+              <div class="stats stats-vertical bg-base-100">
+                <div class="stat">
+                  <div class="stat-title">Page Score</div>
+                  <div class="stat-value text-primary">91</div>
+                  <div class="stat-desc">91/100 - All good</div>
+                </div>
+                <div class="stat">
+                  <div class="stat-title">Revenue</div>
+                  <div class="stat-value text-secondary">$32,400</div>
+                  <div class="stat-desc text-success">21% more than last month</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Alerts Card -->
+          <div class="card bg-base-100 card-border">
+            <div class="card-body">
+              <h3 class="card-title text-sm font-bold uppercase tracking-wide text-base-content/60">Alerts</h3>
+              <div role="alert" class="alert alert-info py-2">
+                <span>Info message</span>
+              </div>
+              <div role="alert" class="alert alert-success py-2 mt-2">
+                <span>Success message</span>
+              </div>
+              <div role="alert" class="alert alert-warning py-2 mt-2">
+                <span>Warning message</span>
+              </div>
+              <div role="alert" class="alert alert-error py-2 mt-2">
+                <span>Error message</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Chat Card -->
+          <div class="card bg-base-100 card-border">
+            <div class="card-body">
+              <h3 class="card-title text-sm font-bold uppercase tracking-wide text-base-content/60">Chat</h3>
+              <div class="chat chat-start">
+                <div class="chat-header">Obi-Wan <time class="text-xs opacity-50">12:45</time></div>
+                <div class="chat-bubble">It's over Anakin!</div>
+              </div>
+              <div class="chat chat-end">
+                <div class="chat-bubble chat-bubble-primary">You underestimate my power</div>
+                <div class="chat-footer opacity-50">Seen</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Table Card -->
+          <div class="card bg-base-100 card-border lg:col-span-2">
+            <div class="card-body">
+              <h3 class="card-title text-sm font-bold uppercase tracking-wide text-base-content/60">Recent Orders</h3>
+              <div class="overflow-x-auto">
+                <table class="table table-zebra">
+                  <thead>
+                    <tr><th>Name</th><th>Status</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Charlie Chapman</td><td><span class="badge badge-info">Send</span></td></tr>
+                    <tr><td>Howard Hudson</td><td><span class="badge badge-error">Failed</span></td></tr>
+                    <tr><td>Fiona Fisher</td><td><span class="badge badge-warning">In progress</span></td></tr>
+                    <tr><td>Nick Nelson</td><td><span class="badge badge-success">Completed</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Modal & Dropdown Card -->
+          <div class="card bg-base-100 card-border">
+            <div class="card-body">
+              <h3 class="card-title text-sm font-bold uppercase tracking-wide text-base-content/60">Modal & Dropdown</h3>
+              <button class="btn btn-primary" onclick="demo_modal.showModal()">Open Modal</button>
+              <dialog id="demo_modal" class="modal">
+                <div class="modal-box">
+                  <h3 class="font-bold text-lg">Hello!</h3>
+                  <p class="py-4">Theme modal styling preview.</p>
+                  <div class="modal-action">
+                    <form method="dialog"><button class="btn">Close</button></form>
+                  </div>
+                </div>
+                <form method="dialog" class="modal-backdrop"><button>close</button></form>
+              </dialog>
+              <div class="relative mt-3">
+                <button class="btn btn-secondary" popovertarget="demo-dropdown" style="anchor-name: --dropdown-anchor;">Dropdown</button>
+                <ul id="demo-dropdown" popover class="menu bg-base-100 w-52 p-2 shadow border-2 border-base-content" style="position-anchor: --dropdown-anchor; position: absolute; top: anchor(bottom); left: anchor(left); margin-top: 0.25rem;">
+                  <li><a>Item 1</a></li>
+                  <li><a>Item 2</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <input type="radio" name="main_tabs" class="tab" aria-label="Component Variants" />
+      <div class="tab-content p-6 bg-base-100 border-2 border-base-content border-t-0">
+        
+        <!-- Component Variants Content -->
+        <div class="space-y-8">
+
+          <!-- Button Variants -->
+          <section>
+            <h3 class="text-xl font-bold mb-4 border-b-2 border-base-content pb-2">Button Variants</h3>
+            <div class="space-y-6">
+              <div>
+                <h4 class="text-sm font-bold uppercase tracking-wide text-base-content/60 mb-2">Colors</h4>
+                <div class="flex flex-wrap gap-3">
+                  <button class="btn">Default</button>
+                  <button class="btn btn-neutral">Neutral</button>
+                  <button class="btn btn-primary">Primary</button>
+                  <button class="btn btn-secondary">Secondary</button>
+                  <button class="btn btn-accent">Accent</button>
+                  <button class="btn btn-info">Info</button>
+                  <button class="btn btn-success">Success</button>
+                  <button class="btn btn-warning">Warning</button>
+                  <button class="btn btn-error">Error</button>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold uppercase tracking-wide text-base-content/60 mb-2">Styles</h4>
+                <div class="flex flex-wrap gap-3">
+                  <button class="btn btn-primary">Default</button>
+                  <button class="btn btn-primary btn-outline">Outline</button>
+                  <button class="btn btn-primary btn-soft">Soft</button>
+                  <button class="btn btn-primary btn-ghost">Ghost</button>
+                  <button class="btn btn-primary btn-link">Link</button>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold uppercase tracking-wide text-base-content/60 mb-2">Sizes</h4>
+                <div class="flex flex-wrap items-center gap-2">
+                  <button class="btn btn-primary btn-xs">XS</button>
+                  <button class="btn btn-primary btn-sm">SM</button>
+                  <button class="btn btn-primary btn-md">MD</button>
+                  <button class="btn btn-primary btn-lg">LG</button>
+                  <button class="btn btn-primary btn-xl">XL</button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Badge Variants -->
+          <section>
+            <h3 class="text-xl font-bold mb-4 border-b-2 border-base-content pb-2">Badge Variants</h3>
+            <div class="space-y-6">
+              <div>
+                <h4 class="text-sm font-bold uppercase tracking-wide text-base-content/60 mb-2">Colors</h4>
+                <div class="flex flex-wrap gap-3">
+                  <span class="badge">Default</span>
+                  <span class="badge badge-neutral">Neutral</span>
+                  <span class="badge badge-primary">Primary</span>
+                  <span class="badge badge-secondary">Secondary</span>
+                  <span class="badge badge-accent">Accent</span>
+                  <span class="badge badge-info">Info</span>
+                  <span class="badge badge-success">Success</span>
+                  <span class="badge badge-warning">Warning</span>
+                  <span class="badge badge-error">Error</span>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold uppercase tracking-wide text-base-content/60 mb-2">Sizes</h4>
+                <div class="flex flex-wrap items-center gap-2">
+                  <span class="badge badge-primary badge-xs">XS</span>
+                  <span class="badge badge-primary badge-sm">SM</span>
+                  <span class="badge badge-primary badge-md">MD</span>
+                  <span class="badge badge-primary badge-lg">LG</span>
+                  <span class="badge badge-primary badge-xl">XL</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Input Variants -->
+          <section>
+            <h3 class="text-xl font-bold mb-4 border-b-2 border-base-content pb-2">Input Variants</h3>
+            <div class="space-y-6">
+              <div>
+                <h4 class="text-sm font-bold uppercase tracking-wide text-base-content/60 mb-2">Colors</h4>
+                <div class="flex flex-wrap gap-3">
+                  <input type="text" placeholder="Default" class="input w-24" />
+                  <input type="text" placeholder="Primary" class="input input-primary w-24" />
+                  <input type="text" placeholder="Secondary" class="input input-secondary w-24" />
+                  <input type="text" placeholder="Success" class="input input-success w-24" />
+                  <input type="text" placeholder="Warning" class="input input-warning w-24" />
+                  <input type="text" placeholder="Error" class="input input-error w-24" />
+                </div>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold uppercase tracking-wide text-base-content/60 mb-2">Sizes</h4>
+                <div class="flex flex-wrap items-center gap-2">
+                  <input type="text" placeholder="XS" class="input input-primary input-xs w-16" />
+                  <input type="text" placeholder="SM" class="input input-primary input-sm w-16" />
+                  <input type="text" placeholder="MD" class="input input-primary input-md w-16" />
+                  <input type="text" placeholder="LG" class="input input-primary input-lg w-16" />
+                  <input type="text" placeholder="XL" class="input input-primary input-xl w-16" />
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Checkbox/Toggle/Radio -->
+          <section>
+            <h3 class="text-xl font-bold mb-4 border-b-2 border-base-content pb-2">Selectors</h3>
+            <div class="space-y-6">
+              <div>
+                <h4 class="text-sm font-bold uppercase tracking-wide text-base-content/60 mb-2">Checkbox Colors</h4>
+                <div class="flex flex-wrap gap-4">
+                  <input type="checkbox" class="checkbox" checked />
+                  <input type="checkbox" class="checkbox checkbox-primary" checked />
+                  <input type="checkbox" class="checkbox checkbox-secondary" checked />
+                  <input type="checkbox" class="checkbox checkbox-accent" checked />
+                  <input type="checkbox" class="checkbox checkbox-success" checked />
+                  <input type="checkbox" class="checkbox checkbox-warning" checked />
+                  <input type="checkbox" class="checkbox checkbox-error" checked />
+                </div>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold uppercase tracking-wide text-base-content/60 mb-2">Toggle Colors</h4>
+                <div class="flex flex-wrap gap-4">
+                  <input type="checkbox" class="toggle" checked />
+                  <input type="checkbox" class="toggle toggle-primary" checked />
+                  <input type="checkbox" class="toggle toggle-secondary" checked />
+                  <input type="checkbox" class="toggle toggle-accent" checked />
+                  <input type="checkbox" class="toggle toggle-success" checked />
+                  <input type="checkbox" class="toggle toggle-warning" checked />
+                  <input type="checkbox" class="toggle toggle-error" checked />
+                </div>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold uppercase tracking-wide text-base-content/60 mb-2">Radio Colors</h4>
+                <div class="flex flex-wrap gap-4">
+                  <input type="radio" name="r1" class="radio" checked />
+                  <input type="radio" name="r2" class="radio radio-primary" checked />
+                  <input type="radio" name="r3" class="radio radio-secondary" checked />
+                  <input type="radio" name="r4" class="radio radio-accent" checked />
+                  <input type="radio" name="r5" class="radio radio-success" checked />
+                  <input type="radio" name="r6" class="radio radio-warning" checked />
+                  <input type="radio" name="r7" class="radio radio-error" checked />
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Alert Variants -->
+          <section>
+            <h3 class="text-xl font-bold mb-4 border-b-2 border-base-content pb-2">Alert Variants</h3>
+            <div class="space-y-2">
+              <div role="alert" class="alert">Default alert</div>
+              <div role="alert" class="alert alert-info">Info alert</div>
+              <div role="alert" class="alert alert-success">Success alert</div>
+              <div role="alert" class="alert alert-warning">Warning alert</div>
+              <div role="alert" class="alert alert-error">Error alert</div>
+            </div>
+          </section>
+
+          <!-- Card Variants -->
+          <section>
+            <h3 class="text-xl font-bold mb-4 border-b-2 border-base-content pb-2">Card Variants</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div class="card bg-base-100">
+                <div class="card-body"><h4 class="card-title">Default</h4><p>No border</p></div>
+              </div>
+              <div class="card bg-base-100 card-border">
+                <div class="card-body"><h4 class="card-title">Border</h4><p>card-border</p></div>
+              </div>
+              <div class="card bg-base-100 card-dash">
+                <div class="card-body"><h4 class="card-title">Dash</h4><p>card-dash</p></div>
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </div>
+
+      <input type="radio" name="main_tabs" class="tab" aria-label="Color Palette" />
+      <div class="tab-content p-6 bg-base-100 border-2 border-base-content border-t-0">
+        
+        <!-- Color Palette Content -->
+        <div class="space-y-8">
+
+          <!-- Base Colors -->
+          <section>
+            <h3 class="text-xl font-bold mb-4 border-b-2 border-base-content pb-2">Base Colors</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div class="h-24 bg-base-100 border-2 border-base-content flex items-center justify-center">
+                <span class="text-base-content font-bold">base-100</span>
+              </div>
+              <div class="h-24 bg-base-200 flex items-center justify-center">
+                <span class="text-base-content font-bold">base-200</span>
+              </div>
+              <div class="h-24 bg-base-300 flex items-center justify-center">
+                <span class="text-base-content font-bold">base-300</span>
+              </div>
+              <div class="h-24 bg-base-content flex items-center justify-center">
+                <span class="text-base-100 font-bold">base-content</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- Brand Colors -->
+          <section>
+            <h3 class="text-xl font-bold mb-4 border-b-2 border-base-content pb-2">Brand Colors</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div>
+                <div class="h-24 bg-primary flex items-center justify-center">
+                  <span class="text-primary-content font-bold text-lg">Primary</span>
+                </div>
+                <div class="h-10 bg-primary-content flex items-center justify-center">
+                  <span class="text-primary text-sm">primary-content</span>
+                </div>
+              </div>
+              <div>
+                <div class="h-24 bg-secondary flex items-center justify-center">
+                  <span class="text-secondary-content font-bold text-lg">Secondary</span>
+                </div>
+                <div class="h-10 bg-secondary-content flex items-center justify-center">
+                  <span class="text-secondary text-sm">secondary-content</span>
+                </div>
+              </div>
+              <div>
+                <div class="h-24 bg-accent flex items-center justify-center">
+                  <span class="text-accent-content font-bold text-lg">Accent</span>
+                </div>
+                <div class="h-10 bg-accent-content flex items-center justify-center">
+                  <span class="text-accent text-sm">accent-content</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Neutral -->
+          <section>
+            <h3 class="text-xl font-bold mb-4 border-b-2 border-base-content pb-2">Neutral</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="h-24 bg-neutral flex items-center justify-center">
+                <span class="text-neutral-content font-bold">Neutral</span>
+              </div>
+              <div class="h-24 bg-neutral-content border-2 border-base-content flex items-center justify-center">
+                <span class="text-neutral font-bold">neutral-content</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- State Colors -->
+          <section>
+            <h3 class="text-xl font-bold mb-4 border-b-2 border-base-content pb-2">State Colors</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div>
+                <div class="h-20 bg-info flex items-center justify-center">
+                  <span class="text-info-content font-bold">Info</span>
+                </div>
+                <div class="h-8 bg-info-content flex items-center justify-center">
+                  <span class="text-info text-xs">content</span>
+                </div>
+              </div>
+              <div>
+                <div class="h-20 bg-success flex items-center justify-center">
+                  <span class="text-success-content font-bold">Success</span>
+                </div>
+                <div class="h-8 bg-success-content flex items-center justify-center">
+                  <span class="text-success text-xs">content</span>
+                </div>
+              </div>
+              <div>
+                <div class="h-20 bg-warning flex items-center justify-center">
+                  <span class="text-warning-content font-bold">Warning</span>
+                </div>
+                <div class="h-8 bg-warning-content flex items-center justify-center">
+                  <span class="text-warning text-xs">content</span>
+                </div>
+              </div>
+              <div>
+                <div class="h-20 bg-error flex items-center justify-center">
+                  <span class="text-error-content font-bold">Error</span>
+                </div>
+                <div class="h-8 bg-error-content flex items-center justify-center">
+                  <span class="text-error text-xs">content</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </div>
+
+    <footer class="mt-8 py-6 text-center text-base-content/60 text-sm border-t-2 border-base-content">
+      DaisyUI Theme Preview
+    </footer>
+  </div>
+
+  <script>
+    const themeSelect = document.getElementById('theme-select');
+    const themeCss = document.getElementById('theme-css');
+
+    // Load available themes from API
+    async function loadThemes() {
+      try {
+        const response = await fetch('/api/themes');
+        const themes = await response.json();
+        
+        themeSelect.innerHTML = themes.map(theme => 
+          `<option value="${theme}">${theme.charAt(0).toUpperCase() + theme.slice(1)}</option>`
+        ).join('');
+        
+        // Set initial theme from URL or first available
+        const urlTheme = new URLSearchParams(window.location.search).get('theme');
+        if (urlTheme && themes.includes(urlTheme)) {
+          themeSelect.value = urlTheme;
+          switchTheme(urlTheme);
+        } else if (themes.length > 0) {
+          switchTheme(themes[0]);
+        }
+      } catch (error) {
+        console.error('Failed to load themes:', error);
+      }
+    }
+
+    // Switch theme
+    function switchTheme(themeName) {
+      themeCss.href = `./dist/${themeName}.css`;
+      document.documentElement.setAttribute('data-theme', themeName);
+      
+      const url = new URL(window.location);
+      url.searchParams.set('theme', themeName);
+      window.history.replaceState({}, '', url);
+    }
+
+    // Handle theme selection
+    themeSelect.addEventListener('change', (e) => {
+      switchTheme(e.target.value);
+    });
+
+    // Initialize
+    loadThemes();
+  </script>
+</body>
+</html>

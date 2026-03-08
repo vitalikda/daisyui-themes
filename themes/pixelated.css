@@ -1,0 +1,122 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+/* Minecraft-style pixel font */
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+@plugin "daisyui/theme" {
+  name: "pixelated";
+  color-scheme: light;
+
+  --color-base-100: oklch(100% 0 0);
+  --color-base-200: oklch(95% 0 0);
+  --color-base-300: oklch(90% 0 0);
+  --color-base-content: oklch(0% 0 0);
+
+  --color-primary: oklch(95% 0 0);
+  --color-primary-content: oklch(0% 0 0);
+  --color-secondary: oklch(75% 0.12 350);
+  --color-secondary-content: oklch(0% 0 0);
+  --color-accent: oklch(70% 0.15 200);
+  --color-accent-content: oklch(0% 0 0);
+
+  --color-neutral: oklch(0% 0 0);
+  --color-neutral-content: oklch(100% 0 0);
+
+  --color-info: oklch(65% 0.15 230);
+  --color-info-content: oklch(100% 0 0);
+  --color-success: oklch(65% 0.15 145);
+  --color-success-content: oklch(100% 0 0);
+  --color-warning: oklch(80% 0.15 85);
+  --color-warning-content: oklch(0% 0 0);
+  --color-error: oklch(60% 0.2 25);
+  --color-error-content: oklch(100% 0 0);
+
+  --radius-selector: 0rem;
+  --radius-field: 0rem;
+  --radius-box: 0rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 2px;
+  --depth: 0;
+  --noise: 0;
+}
+
+/* pixel-art style with SVG pixelated borders */
+[data-theme="pixelated"] {
+  --pixel-border-svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6'%3E%3Cpath d='M0 2 H2 V0 H4 V2 H6 V4 H4 V6 H2 V4 H0 Z' fill='black'/%3E%3C/svg%3E");
+  
+  font-family: 'VT323', monospace;
+
+  .card {
+    border: 2px solid black;
+    border-image-source: var(--pixel-border-svg);
+    border-image-slice: 3;
+    border-image-width: 2;
+    border-image-repeat: stretch;
+    border-image-outset: 2;
+    box-shadow: 
+      2px 2px 0 2px oklch(75% 0.12 350),
+      -2px -2px 0 2px oklch(100% 0 0);
+  }
+
+  .btn {
+    border: 2px solid black;
+    border-image-source: var(--pixel-border-svg);
+    border-image-slice: 3;
+    border-image-width: 2;
+    border-image-repeat: stretch;
+    border-image-outset: 2;
+    box-shadow: 
+      2px 2px 0 2px oklch(0% 0 0),
+      -2px -2px 0 2px oklch(95% 0 0);
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+
+    &:active {
+      transform: translateY(2px);
+      box-shadow: 
+        2px 2px 0 2px oklch(95% 0 0),
+        -2px -2px 0 2px oklch(95% 0 0);
+    }
+  }
+
+  .input, .select, .textarea {
+    border: 2px solid black;
+    border-image-source: var(--pixel-border-svg);
+    border-image-slice: 3;
+    border-image-width: 2;
+    border-image-repeat: stretch;
+    border-image-outset: 2;
+    box-shadow: 
+      2px 2px 0 2px oklch(100% 0 0),
+      -2px -2px 0 2px oklch(100% 0 0);
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .checkbox, .radio {
+    border: 2px solid black;
+    border-image-source: var(--pixel-border-svg);
+    border-image-slice: 3;
+    border-image-width: 1;
+    border-image-repeat: stretch;
+    border-image-outset: 1;
+    box-shadow: 2px 2px 0 1px oklch(0% 0 0);
+  }
+
+  .toggle {
+    border: 2px solid black;
+    box-shadow: 2px 2px 0 1px oklch(0% 0 0);
+  }
+
+  .badge {
+    border: 2px solid black;
+    border-image-source: var(--pixel-border-svg);
+    border-image-slice: 3;
+    border-image-width: 1;
+    border-image-repeat: stretch;
+    border-image-outset: 1;
+  }
+}

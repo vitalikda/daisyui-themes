@@ -1,0 +1,83 @@
+@import "tailwindcss";
+@plugin "daisyui";
+@plugin "daisyui/theme" {
+  name: "comics";
+  color-scheme: light;
+
+  --color-base-100: oklch(100% 0 0);
+  --color-base-200: oklch(96% 0.01 90);
+  --color-base-300: oklch(92% 0.02 90);
+  --color-base-content: oklch(0% 0 0);
+
+  --color-primary: oklch(89% 0.17 93);
+  --color-primary-content: oklch(0% 0 0);
+  --color-secondary: oklch(0% 0 0);
+  --color-secondary-content: oklch(100% 0 0);
+  --color-accent: oklch(93% 0.11 93);
+  --color-accent-content: oklch(0% 0 0);
+
+  --color-neutral: oklch(35% 0 0);
+  --color-neutral-content: oklch(98% 0 0);
+
+  --color-info: oklch(65% 0.2 240);
+  --color-info-content: oklch(100% 0 0);
+  --color-success: oklch(65% 0.2 145);
+  --color-success-content: oklch(100% 0 0);
+  --color-warning: oklch(85% 0.18 85);
+  --color-warning-content: oklch(0% 0 0);
+  --color-error: oklch(55% 0.22 27);
+  --color-error-content: oklch(100% 0 0);
+
+  --radius-selector: 0rem;
+  --radius-field: 0rem;
+  --radius-box: 0rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 2px;
+  --depth: 0;
+  --noise: 0;
+}
+
+/* borders, shadows, and animations */
+[data-theme="comics"] {
+  .card {
+    border: 2px solid oklch(0% 0 0);
+    box-shadow: 4px 4px 0 0 oklch(0% 0 0);
+  }
+
+  .btn {
+    border: 2px solid oklch(0% 0 0);
+    box-shadow: 4px 4px 0 0 oklch(0% 0 0);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+    &:hover {
+      transform: translateY(2px);
+      box-shadow: 2px 2px 0 0 oklch(0% 0 0);
+    }
+
+    &:active {
+      transform: translateY(4px) translateX(2px);
+      box-shadow: none;
+    }
+  }
+
+  .input, .select, .textarea {
+    border: 2px solid oklch(0% 0 0);
+    box-shadow: 2px 2px 0 0 oklch(0% 0 0);
+    transition: box-shadow 0.15s ease;
+
+    &:focus {
+      outline: none;
+      box-shadow: 4px 4px 0 0 oklch(0% 0 0);
+    }
+  }
+
+  .checkbox, .radio, .toggle {
+    border: 2px solid oklch(0% 0 0);
+    box-shadow: 2px 2px 0 0 oklch(0% 0 0);
+  }
+
+  .badge {
+    border: 2px solid oklch(0% 0 0);
+  }
+}
