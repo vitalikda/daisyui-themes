@@ -6,8 +6,8 @@
       "name": "daisyui-themes",
       "devDependencies": {
         "@types/bun": "^1.3.10",
-        "daisyui": "^5.0.0",
-        "tailwindcss": "^4.0.0",
+        "daisyui": "^5.5.19",
+        "tailwindcss": "^4.2.1",
       },
     },
   },

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="comics">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DaisyUI Theme Preview</title>
-  <link id="theme-css" href="./dist/comics.css" rel="stylesheet">
+  <link href="./styles.css" rel="stylesheet">
 </head>
 <body class="bg-base-200 min-h-screen">
   <div class="navbar bg-base-100 border-b-2 border-base-content sticky top-0 z-50">
@@ -13,9 +13,10 @@
     </div>
     <div class="flex-none gap-2 px-4">
       <label class="text-sm font-medium">Theme:</label>
-      <select id="theme-select" class="select select-sm select-primary w-40">
-        <option value="comics">Loading...</option>
+      <select id="theme-select" class="select select-sm w-44">
+        <option>Loading...</option>
       </select>
+      <button id="copy-btn" class="btn btn-sm btn-ghost">Copy</button>
     </div>
   </div>
 
@@ -23,7 +24,7 @@
     <!-- Main Tabs -->
     <div role="tablist" class="tabs tabs-box tabs-lg mb-8">
       <input type="radio" name="main_tabs" class="tab" aria-label="Components Demo" checked />
-      <div class="tab-content p-6 bg-base-100 border-2 border-base-content border-t-0">
+      <div class="tab-content p-6">
         
         <!-- Components Demo Content -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -269,7 +270,7 @@
       </div>
 
       <input type="radio" name="main_tabs" class="tab" aria-label="Component Variants" />
-      <div class="tab-content p-6 bg-base-100 border-2 border-base-content border-t-0">
+      <div class="tab-content p-6">
         
         <!-- Component Variants Content -->
         <div class="space-y-8">
@@ -449,7 +450,7 @@
       </div>
 
       <input type="radio" name="main_tabs" class="tab" aria-label="Color Palette" />
-      <div class="tab-content p-6 bg-base-100 border-2 border-base-content border-t-0">
+      <div class="tab-content p-6">
         
         <!-- Color Palette Content -->
         <div class="space-y-8">
@@ -565,50 +566,6 @@
     </footer>
   </div>
 
-  <script>
-    const themeSelect = document.getElementById('theme-select');
-    const themeCss = document.getElementById('theme-css');
-
-    // Load available themes from API
-    async function loadThemes() {
-      try {
-        const response = await fetch('/api/themes');
-        const themes = await response.json();
-        
-        themeSelect.innerHTML = themes.map(theme => 
-          `<option value="${theme}">${theme.charAt(0).toUpperCase() + theme.slice(1)}</option>`
-        ).join('');
-        
-        // Set initial theme from URL or first available
-        const urlTheme = new URLSearchParams(window.location.search).get('theme');
-        if (urlTheme && themes.includes(urlTheme)) {
-          themeSelect.value = urlTheme;
-          switchTheme(urlTheme);
-        } else if (themes.length > 0) {
-          switchTheme(themes[0]);
-        }
-      } catch (error) {
-        console.error('Failed to load themes:', error);
-      }
-    }
-
-    // Switch theme
-    function switchTheme(themeName) {
-      themeCss.href = `./dist/${themeName}.css`;
-      document.documentElement.setAttribute('data-theme', themeName);
-      
-      const url = new URL(window.location);
-      url.searchParams.set('theme', themeName);
-      window.history.replaceState({}, '', url);
-    }
-
-    // Handle theme selection
-    themeSelect.addEventListener('change', (e) => {
-      switchTheme(e.target.value);
-    });
-
-    // Initialize
-    loadThemes();
-  </script>
+  <script src="theme-select.js"></script>
 </body>
 </html>
