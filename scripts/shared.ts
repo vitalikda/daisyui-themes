@@ -15,10 +15,38 @@ export async function getCustomThemes(): Promise<string[]> {
 export async function generateSource(): Promise<string> {
   const customThemes = await getCustomThemes();
   const builtinList = BUILTIN_THEMES.join(", ");
-  let source = `@import "tailwindcss";\n@plugin "daisyui" {\n  themes: ${builtinList};\n}\n\n`;
+  
+  // Collect font imports and theme content separately
+  const fontImports: string[] = [];
+  const themeContents: string[] = [];
+  
   for (const theme of customThemes) {
-    source += await Bun.file(`./themes/${theme}.css`).text() + "\n\n";
+    const content = await Bun.file(`./themes/${theme}.css`).text();
+    // Extract @import url(...) statements for fonts
+    const lines = content.split('\n');
+    const fontLines: string[] = [];
+    const otherLines: string[] = [];
+    
+    for (const line of lines) {
+      if (line.trim().startsWith('@import url(')) {
+        fontLines.push(line);
+      } else {
+        otherLines.push(line);
+      }
+    }
+    
+    fontImports.push(...fontLines);
+    themeContents.push(otherLines.join('\n'));
   }
+  
+  // Build source with font imports at the very top
+  let source = '';
+  if (fontImports.length > 0) {
+    source += fontImports.join('\n') + '\n\n';
+  }
+  source += `@import "tailwindcss";\n@plugin "daisyui" {\n  themes: ${builtinList};\n}\n\n`;
+  source += themeContents.join('\n\n');
+  
   return source;
 }
 

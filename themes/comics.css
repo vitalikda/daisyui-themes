@@ -2,21 +2,23 @@
   name: "comics";
   color-scheme: light;
 
+  /* Base colors */
   --color-base-100: oklch(100% 0 0);
   --color-base-200: oklch(96% 0.01 90);
   --color-base-300: oklch(92% 0.02 90);
   --color-base-content: oklch(0% 0 0);
 
+  /* Brand colors - NeoBrutalism palette */
   --color-primary: oklch(89% 0.17 93);
   --color-primary-content: oklch(0% 0 0);
   --color-secondary: oklch(0% 0 0);
   --color-secondary-content: oklch(100% 0 0);
   --color-accent: oklch(93% 0.11 93);
   --color-accent-content: oklch(0% 0 0);
-
   --color-neutral: oklch(35% 0 0);
   --color-neutral-content: oklch(98% 0 0);
 
+  /* State colors */
   --color-info: oklch(65% 0.2 240);
   --color-info-content: oklch(100% 0 0);
   --color-success: oklch(65% 0.2 145);
@@ -26,56 +28,91 @@
   --color-error: oklch(55% 0.22 27);
   --color-error-content: oklch(100% 0 0);
 
+  /* Shape */
   --radius-selector: 0rem;
   --radius-field: 0rem;
   --radius-box: 0rem;
-  --size-selector: 0.25rem;
-  --size-field: 0.25rem;
-  --border: 2px;
+  --size-selector: var(--spacing);
+  --size-field: var(--spacing);
+  --border: calc(var(--spacing) * 0.5);
   --depth: 0;
   --noise: 0;
 }
 
-/* borders, shadows, and animations */
 [data-theme="comics"] {
+  /* Theme-specific colors in oklch */
+  --color-border: oklch(0% 0 0);
+  --color-shadow: oklch(0% 0 0);
+  
+  /* Spacing - using Tailwind's --spacing as base unit */
+  --shadow-offset: var(--spacing);
+
+  /* Remove outlines on elements with box-shadow focus indicators */
+  .btn, .input, .select, .textarea, .checkbox, .radio, .toggle, .range, .tab {
+    &:focus, &:focus-visible {
+      outline: none;
+    }
+  }
+  select, select:focus, select:focus-visible {
+    outline: none !important;
+  }
+
   .card {
-    border: 2px solid oklch(0% 0 0);
-    box-shadow: 4px 4px 0 0 oklch(0% 0 0);
+    border: var(--border) solid var(--color-border);
+    box-shadow: var(--shadow-offset) var(--shadow-offset) 0 0 var(--color-shadow);
   }
 
   .btn {
-    border: 2px solid oklch(0% 0 0);
-    box-shadow: 4px 4px 0 0 oklch(0% 0 0);
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    border: var(--border) solid var(--color-border);
+    box-shadow: var(--shadow-offset) var(--shadow-offset) 0 0 var(--color-shadow);
+    transition: transform var(--default-transition-duration) var(--default-transition-timing-function),
+                box-shadow var(--default-transition-duration) var(--default-transition-timing-function);
 
     &:hover {
-      transform: translateY(2px);
-      box-shadow: 2px 2px 0 0 oklch(0% 0 0);
+      transform: translateY(calc(var(--spacing) * 0.5));
+      box-shadow: calc(var(--spacing) * 0.5) calc(var(--spacing) * 0.5) 0 0 var(--color-shadow);
     }
 
     &:active {
-      transform: translateY(4px) translateX(2px);
+      transform: translateY(var(--spacing)) translateX(calc(var(--spacing) * 0.5));
       box-shadow: none;
     }
   }
 
   .input, .select, .textarea {
-    border: 2px solid oklch(0% 0 0);
-    box-shadow: 2px 2px 0 0 oklch(0% 0 0);
-    transition: box-shadow 0.15s ease;
+    border: var(--border) solid var(--color-border);
+    box-shadow: calc(var(--spacing) * 0.5) calc(var(--spacing) * 0.5) 0 0 var(--color-shadow);
+    transition: box-shadow var(--default-transition-duration) var(--default-transition-timing-function);
 
-    &:focus {
-      outline: none;
-      box-shadow: 4px 4px 0 0 oklch(0% 0 0);
+    &:focus, &:focus-visible {
+      box-shadow: var(--shadow-offset) var(--shadow-offset) 0 0 var(--color-shadow);
     }
   }
 
   .checkbox, .radio, .toggle {
-    border: 2px solid oklch(0% 0 0);
-    box-shadow: 2px 2px 0 0 oklch(0% 0 0);
+    border: var(--border) solid var(--color-border);
+    box-shadow: calc(var(--spacing) * 0.5) calc(var(--spacing) * 0.5) 0 0 var(--color-shadow);
   }
 
   .badge {
-    border: 2px solid oklch(0% 0 0);
+    border: var(--border) solid var(--color-border);
+  }
+
+  .alert {
+    border: var(--border) solid var(--color-border);
+    box-shadow: var(--shadow-offset) var(--shadow-offset) 0 0 var(--color-shadow);
+  }
+
+  .card, .modal-box, .dropdown-content {
+    border: var(--border) solid var(--color-border);
+    box-shadow: var(--shadow-offset) var(--shadow-offset) 0 0 var(--color-shadow);
+  }
+
+  .tabs-box .tab {
+    border: var(--border) solid var(--color-border);
+  }
+
+  .progress, .range {
+    border: var(--border) solid var(--color-border);
   }
 }

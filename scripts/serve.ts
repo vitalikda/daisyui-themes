@@ -5,7 +5,7 @@ let cssCache: string | null = null;
 const encoder = new TextEncoder();
 const sseClients = new Set<ReadableStreamDefaultController>();
 
-watch("./themes", (_event, filename) => {
+watch("./themes", { recursive: true }, (_event, filename) => {
   cssCache = null;
   console.log(`\x1b[2m${new Date().toLocaleTimeString()}\x1b[0m \x1b[36m↻\x1b[0m ${filename ?? "themes"} changed, recompiling...`);
   for (const client of sseClients) {
@@ -27,7 +27,7 @@ async function getCss(): Promise<string> {
 }
 
 const server = Bun.serve({
-  port: 0,
+  port: 3000,
   async fetch(req) {
     const url = new URL(req.url);
     let path = url.pathname;
